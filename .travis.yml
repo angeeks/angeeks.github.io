@@ -13,9 +13,12 @@ cache:
       - node_modules
 deploy:
   - provider: pages
-    local-dir: dist
+    local-dir: dist/about
+    target-branch: master
     github-token: $github
     skip-cleanup: true
     keep-history: true
+    on:
+      branch: dev
 notifications:
   slack: $slack
