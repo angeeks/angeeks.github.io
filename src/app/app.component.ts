@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Gtag } from '@angeeks/gtag';
+
 import { AppData } from './data';
 
 @Component({
@@ -9,7 +11,12 @@ import { AppData } from './data';
 export class AppComponent {
   title = 'About - Angeeks';
   projects = [];
-  constructor(data: AppData) {
+  constructor(data: AppData,
+    private gtag: Gtag) {
+    gtag.event('screen_view', {
+      'app_name': 'angeeks.github.io',
+      'screen_name' : 'ngk-root'
+    });
     data.app.subscribe(d => {
       this.projects = d.projects;
     });

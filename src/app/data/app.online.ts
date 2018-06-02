@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 const reposApi = 'https://api.github.com/orgs/angeeks/repos';
