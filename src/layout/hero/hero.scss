@@ -1,55 +1,30 @@
-$default-bg: rgb(245,40,62);
-$bg: linear-gradient(142deg, rgba(180,248,251,0.8931290064102564) 0%, rgba(185,184,191,0.4412059294871795) 50%, rgba(251,182,189,0.4988982371794872) 100%);
+$bg-host-default: rgb(245,40,62);
+$bg-host: linear-gradient(142deg, rgba(180,248,251,0.8931290064102564) 0%, rgba(185,184,191,0.4412059294871795) 50%, rgba(251,182,189,0.4988982371794872) 100%);
 
-$text-color: white;
-$title-color: #424242;
+$c-title: #444;
+$c-title-shadow: #888;
+$c-desc: lighten($c-title, 10);
 
 :host {
   display: flex;
+  box-sizing: border-box;
   flex-flow: column;
   width: 100%;
-  background: $default-bg;
-  background: $bg;
+  background: $bg-host-default;
+  background: $bg-host;
   padding: 42px 21px;
-  .text {
-    color: $text-color;
-    text-shadow:
-      0 0 5px #222,
-      3px 3px 5px #999;
-    .red {
-      text-shadow:
-        0 0 5px red,
-        3px 3px 5px #999;
-    }
-    .teal {
-      text-shadow:
-        0 0 5px #027075,
-        3px 3px 5px #999;
-    }
-  }
-  .equation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .eq {
-      font-size: 84px;
-      font-weight: 900;
-      padding: 20px;
-    }
-  }
-  img {
-    width: 200px;
-    height: 200px;
-    display: inline-block;
-    &.mark {
-      filter: drop-shadow(3px 3px 5px #333);
-    }
-  }
   .title {
-    margin: 42px auto 0;
-    width: 60%;
-    text-align: center;
-    font-size: 42px;
+    font-size: 60px;
     font-weight: 900;
+    color: $c-title;
+    text-shadow: 2px 3px 5px $c-title-shadow;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .desc {
+    font-size: 20px;
+    font-weight: 400;
   }
 }

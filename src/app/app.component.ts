@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppData } from './data';
 
 @Component({
   selector: 'ngk-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngk';
+  title = 'About - Angeeks';
+  projects = [];
+  constructor(data: AppData) {
+    data.app.subscribe(d => {
+      this.projects = d.projects;
+    });
+  }
 }
